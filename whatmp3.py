@@ -36,7 +36,7 @@ tracker = None
 max_threads = multiprocessing.cpu_count()
 
 # Tags to copy (note: changing/adding to these requires changing/adding values in/to 'encoders' below)
-copy_tags = ('TITLE', 'ALBUM', 'ARTIST', 'TRACKNUMBER', 'GENRE', 'COMMENT', 'DATE')
+copy_tags = ('TITLE', 'ALBUM', 'ARTIST', 'TRACKNUMBER', 'GENRE', 'COMMENT', 'DATE', 'ALBUMARTIST')
 
 # Default encoding options
 enc_opts = {
@@ -60,6 +60,7 @@ encoders = {
         'GENRE':       "--tg '%(GENRE)s'",
         'DATE':        "--ty '%(DATE)s'",
         'COMMENT':     "--tc '%(COMMENT)s'",
+        'ALBUMARTIST': "--tv TPE2='%(ALBUMARTIST)s'",
         'regain':      "mp3gain -q -c -s i '%s'/*.mp3"
     },
     'oggenc': {
